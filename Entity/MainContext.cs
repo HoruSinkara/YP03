@@ -12,11 +12,15 @@ namespace YP03.Entity
 {
     public class MainContext : DbContext
     {
-        private readonly string _connectionString = @"Data Source=192.168.221.12;Initial Catalog =Сonference_DB ; User ID = user02; Password=02;TrustServerCertificate=True";
+        private readonly string _connectionString = @"Data Source=192.168.221.12;Initial Catalog =Conference_DB ; User ID = user02; Password=02;TrustServerCertificate=True";
+
+   
+
         public MainContext()
-        { 
-             Database.EnsureCreated();
-             Database.EnsureDeleted();
+        {
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
+      
         }
         public DbSet<Activity> activities { get; set; }
         public DbSet<City> cities { get; set; }
@@ -31,6 +35,15 @@ namespace YP03.Entity
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_connectionString);
+        }
+        protected override void OnModelCreating(ModelBuilder modelbuilder)
+        {
+            foreach (var relationship in modelbuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+
+            base.OnModelCreating(modelbuilder);
         }
 
     }

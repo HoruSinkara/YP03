@@ -1,0 +1,13 @@
+﻿<Window x:Class="YP03.AccountPartipicant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YP03"
+        mc:Ignorable="d"   
+        Icon="D:\ПБ-41 УП03\YP03\bin\Debug\net7.0-windows\logo.png"
+        Title="Конференции по информационной безопасности. Окно Участника" Height="450" Width="800">
+    <Grid>
+        <Label/>
+    </Grid>
+</Window>

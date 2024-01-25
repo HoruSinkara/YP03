@@ -23,5 +23,7 @@ namespace YP03.Entity.Model
         public int IdDirection { get; set; }
 
         public Country Country { get; set; }
+        public List<Direction> directions { get; set; } = new List<Direction>();
+        public List<IdActivityJury> activities { get; set; }= new List<IdActivityJury>();
     }
 }

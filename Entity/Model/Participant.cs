@@ -14,13 +14,13 @@ namespace YP03.Entity.Model
         public string Patronymic { get; set; }
         public string Email { get; set; }
         public DateTime Birthday { get; set; }
-        public int IdCountry { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
         public string Photo { get; set; }
         public string Gender { get; set; }
        
         public Country Country { get; set; } = new Country();
+        public List<Event> Events { get; set; }  = new List<Event>();
 
 
     }

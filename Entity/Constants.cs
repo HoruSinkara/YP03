@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace YP03.Entity
 {
-     public class Constants
+     public static class Constants
     {
         public static readonly MainContext Context= new MainContext();
     }
