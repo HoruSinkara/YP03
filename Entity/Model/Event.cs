@@ -13,8 +13,12 @@ namespace YP03.Entity.Model
         public DateTime StartDate { get; set; }
         public int Duration { get; set; }
         public string IDCity { get; set; }  
-        public int IdParticipant { get; set; }
 
+
+        public EventActivity EventActivity { get; set; } = new EventActivity(); 
+        public List<City> cities { get; set; }= new List<City>();  
+        public Participant participant { get; set; } = new Participant();
+        
 
     }
 }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace YP03.Entity.Model
 {
-    public class EventActivity
+    public class IdActivityJury
     {
         public int Id { get; set; }
-        public int IdEvent { get; set; }
         public int IdActivity { get; set; }
+        public int IdJury { get; set; }
 
-
-        public List<Activity> activities { get; set; } = new List<Activity> ();
+        public List<Activity> activities { get; set; } = new List<Activity>();
+        public Jury Jury { get; set; } = new Jury();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,11 @@ namespace YP03.Entity.Model
 {
     public class Country
     {
-       
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-        public string NameRussian { get; set; }
-        public string NameEnglish { get; set; }
-        public int Code { get; set;}
-       public int CodeTwo { get; set; }
+        public string Acronym { get; set; }
+        public string Name { get; set; }
+        public string NameEng { get; set; }
        
         public List<Jury> juries { get; set; } = new List<Jury>();
         public List<Moderator> moderators { get; set; } = new List<Moderator>();

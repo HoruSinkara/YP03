@@ -13,6 +13,11 @@ namespace YP03.Entity.Model
         public string Duration { get; set; }
         public DateTime StartDate { get; set; }
         public int IdModerator { get; set; }
+
+        public IdActivityJury IdActivityJury { get; set; } = new IdActivityJury();
+
+        public EventActivity EventActivity { get; set; } = new EventActivity();
+        public List<Moderator> moderators { get; set; } = new List<Moderator>();
     }
 
 }
