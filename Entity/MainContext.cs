@@ -13,8 +13,8 @@ namespace YP03.Entity
     public class MainContext : DbContext
     {
         private readonly string _connectionString = @"Data Source=192.168.221.12;Initial Catalog =Conference_DB ; User ID = user02; Password=02;TrustServerCertificate=True";
+        private readonly string _connectionStringHome = @"Data Source=DESKTOP-RF9II86;Initial Catalog=Conference_DB;Integrated Security=True;TrustServerCertificate=True";
 
-   
 
         public MainContext()
         {
@@ -34,7 +34,7 @@ namespace YP03.Entity
         public DbSet<Participant> participants { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_connectionString);
+            optionsBuilder.UseSqlServer(_connectionStringHome);
         }
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {

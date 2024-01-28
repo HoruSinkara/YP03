@@ -4,32 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP03"
-        Icon="D:\ПБ-41 УП03\YP03\bin\Debug\net7.0-windows\logo.png"
+        Icon= "/logo.png"
         mc:Ignorable="d"
         Title="Конференции по информационной безопасности. Авторизация" Height="450" Width="800">
-  
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-
             <RowDefinition/>
-
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Авторизация" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
         <TextBox x:Name="IdNumber" Grid.Row="1" Height="50" Width="300" FontSize="24" TextAlignment="Center"/>
-        <PasswordBox x:Name="Password" Grid.Row="2" Height="50" Width="300" FontSize="24" HorizontalContentAlignment="Center" />
-        <ComboBox x:Name="Role" Grid.Row="3" Height="50" Width="300" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="24">
+        <PasswordBox x:Name="Password" Grid.Row="2" Height="50" Width="300" FontSize="24" HorizontalContentAlignment="Center" LostFocus="Password_LostFocus" />
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Height="50" Width="300">
+            <Image x:Name="CaptchaImage" Height="50" Width="300"/>
+        </Border>
+        <TextBox x:Name="IntroducedCaptcha" Grid.Row="4" Height="50" Width="300" FontSize="24" TextAlignment="Center"/>
+        <ComboBox x:Name="Role" Grid.Row="5" Height="50" Width="300" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="24">
             <ComboBoxItem Content="Участник" IsSelected="True"/>
             <ComboBoxItem Content="Организатор"/>
             <ComboBoxItem Content="Жюри"/>
             <ComboBoxItem Content="Модератор"/>
         </ComboBox>
-        <Button Grid.Row="4"  Height="50" Width="300" FontSize="24" Content="Войти" Click="Button_Click"/>
-
-
+        <Button x:Name="SignInButton" Grid.Row="6"  Height="50" Width="300" FontSize="24" Content="Войти" Click="Button_Click"/>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP03"
         mc:Ignorable="d"   
-        Icon="D:\ПБ-41 УП03\YP03\bin\Debug\net7.0-windows\logo.png"
+        Icon="\logo.png"
         Title="Конференции по информационной безопасности. Окно Участника" Height="450" Width="800">
     <Grid>
         <Label/>
