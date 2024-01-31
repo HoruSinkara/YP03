@@ -124,7 +124,8 @@ namespace YP03
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow logIn = new MainWindow();
-            logIn.ShowDialog();
+            logIn.Show();
+            this.Close();
         }
         private static object _contextSortDate { get; set; }
         private static SelectionChangedEventArgs _contextSortDateEvent { get; set; }

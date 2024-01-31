@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="Авторизация" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
         <TextBox x:Name="IdNumber" Grid.Row="1" Height="50" Width="300" FontSize="24" TextAlignment="Center"/>
-        <PasswordBox x:Name="Password" Grid.Row="2" Height="50" Width="300" FontSize="24" HorizontalContentAlignment="Center" LostFocus="Password_LostFocus" />
+        <PasswordBox x:Name="Password" Grid.Row="2" Height="50" Width="300" FontSize="24" HorizontalContentAlignment="Center"/>
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Height="50" Width="300">
             <Image x:Name="CaptchaImage" Height="50" Width="300"/>
         </Border>

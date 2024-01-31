@@ -114,8 +114,8 @@ namespace YP03
                 var phone = Phone.Text;
                 var direction = Direction.Text;
                 var events = Event.Text;
-                var password = Password.Text;
-                var rePassword = RePassword.Text;
+                var password = Password.Password;
+                var rePassword = RePassword.Password;
                 if (!isRightPassword(password)) { return; }
                 if (password != rePassword)
                 {
