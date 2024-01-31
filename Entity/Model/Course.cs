@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace YP03.Entity.Model
 {
-    public class City
+    public class Course
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-        public string NameCity { get; set; }
-       
-        public Event? Event { get; set; } = new Event();
+        public string? Name { get; set; }
+
     }
 }

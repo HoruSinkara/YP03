@@ -18,14 +18,14 @@ namespace YP03.Entity
 
         public MainContext()
         {
-            Database.EnsureDeleted();
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
       
         }
         public DbSet<Activity> activities { get; set; }
         public DbSet<City> cities { get; set; }
         public DbSet<Country> countries { get; set; }
-        public DbSet<Direction> directions { get; set; }
+        public DbSet<Course> courses { get; set; }
         public DbSet<Event> events { get; set; }
         public DbSet<EventActivity> eventsActivities { get; set; }
         public DbSet<Jury> juries { get; set; }

@@ -26,11 +26,20 @@ namespace YP03
         public OrganizerWindows(Organizer organizer)
         {
             InitializeComponent();
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + organizer.Photo);
-            image.EndInit();
-            Photo.Source = image;
+            try
+            {
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + organizer.Photo);
+                image.EndInit();
+                Photo.Source = image;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Не удалось подгрузить изображение", "Ошибка");
+                throw;
+            }
+            
 
             DateTime dateTime = DateTime.Now;
             if(dateTime.Hour >= 9 && (dateTime.Hour < 11 || (dateTime.Hour <= 11 && dateTime.Minute == 0)))
@@ -46,5 +55,23 @@ namespace YP03
             }
         }
 
+        private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            Registration reg = new Registration();
+            reg.ShowDialog();
+        }
+
+        private void ButtonJury_Click(object sender, RoutedEventArgs e)
+        {
+            Registration reg = new Registration();
+            reg.ShowDialog();
+        }
+
+        private void ButtonEvents_Click(object sender, RoutedEventArgs e)
+        {
+            Catalog catalog = new Catalog();
+            catalog.Show();
+            this.Close();
+        }
     }
 }

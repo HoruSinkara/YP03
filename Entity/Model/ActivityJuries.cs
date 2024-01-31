@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace YP03.Entity.Model
 {
-    public class City
+    public class ActivityJuries
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-        public string NameCity { get; set; }
-       
-        public Event? Event { get; set; } = new Event();
+        public int IdActivity { get; set; }
+
+        public List<Activity?> activities { get; set; } = new List<Activity?>();
+        public Jury? Jury { get; set; } = new Jury();
     }
 }

@@ -18,12 +18,10 @@ namespace YP03.Entity.Model
         public string Email { get; set; }
         public DateTime Birthday { get; set; }
         public string Phone { get; set; }
-        public string Direction { get; set; }
         public string Password { get; set; }
-        public string Photo { get; set; }
-
-        public Country Country { get; set; }
-        public List<Direction> directions { get; set; } = new List<Direction>();
-        public List<IdActivityJury> activities { get; set; }= new List<IdActivityJury>();
+        public string? Photo { get; set; }
+        public Country? Country { get; set; }
+        public Course? Course { get; set; }
+        public List<ActivityJuries?> activities { get; set; }= new List<ActivityJuries?>();
     }
 }

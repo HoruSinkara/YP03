@@ -20,9 +20,9 @@ namespace YP03.Entity.Model
         public string Password { get; set; }
         public string Photo { get; set; }
         public string Gender { get; set; }
-       
-        public Country Country { get; set; } = new Country();
-        public List<Event> Events { get; set; }  = new List<Event>();
+        public Activity? Activity { get; set; }
+        public Country? Country { get; set; } = new Country();
+        public List<Event?> Events { get; set; }  = new List<Event?>();
 
 
     }
