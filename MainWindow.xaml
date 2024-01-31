@@ -7,7 +7,7 @@
         Icon= "/logo.png"
         mc:Ignorable="d"
         Title="Конференции по информационной безопасности. Авторизация" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#fcfcfc">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>

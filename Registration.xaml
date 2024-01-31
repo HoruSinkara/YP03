@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YP03"
         mc:Ignorable="d"
-        Icon="D:\ПБ-41 УП03\YP03\bin\Debug\net7.0-windows\logo.png"
-        Title="Конференции по информационной безопасности. Окно регистрации жюри/модератора" Height="450" Width="800">
+        Icon="\logo.png"
+        Title="Конференции по информационной безопасности. Окно регистрации жюри/модератора" Height="550" Width="900" MinHeight="550" MinWidth="900">
     <Window.Resources>
         <Style TargetType="TextBlock" >
             <Setter Property="Foreground" Value="#FF171717"/>
@@ -20,7 +20,7 @@
             <Setter Property="Foreground" Value="#FF171717"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Background="#fcfcfc">
        <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -51,22 +51,30 @@
         <TextBlock Grid.Row="6" Text="Телефон: "/>
         <TextBlock Grid.Row="7" Text="Напавление: "/>
         <CheckBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Content="Прекрепить к мероприятию" FontSize="12" Foreground="#FF5D5555" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 10 40 10"/>
+        
+        
         <TextBlock Grid.Row="9" Text="Мероприятие: "/>
-
+        <TextBox x:Name="Id" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" IsReadOnly="True"/>
         <TextBox x:Name="FIO" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="Genders" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="20 10 40 10"/>
-        <ComboBox x:Name="Role" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="20 10 40 10"/>
+        <ComboBox x:Name="Genders" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="20 10 40 10">
+            <ComboBoxItem Content="м" IsSelected="True"/>
+            <ComboBoxItem Content="ж"/>
+        </ComboBox>
+        <ComboBox x:Name="Role" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="20 10 40 10">
+            <ComboBoxItem Content="Жюри"/>
+            <ComboBoxItem Content="Модератор"/>
+        </ComboBox>
         <TextBox x:Name="Email" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox x:Name="Phone" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="Activity" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="Direction" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="20 10 40 10"/>
         <ComboBox x:Name="Event" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Margin="20 10 40 10"/>
-        <Image x:Name="PhotoRegistr" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
-        <Button x:Name="Ok" Grid.Row="10" Grid.Column="4" Content="Ok" Margin="20 10"/>
+        <Image x:Name="PhotoRegistr" Grid.Row="1" Grid.Column="4" Source="/logo.png" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
+        <Button x:Name="Ok" Grid.Row="10" Grid.Column="4" Content="Ok" Margin="20 10" Click="Ok_Click"/>
         <Button x:Name="Cancel" Grid.Row="10" Grid.Column="5" Content="Отмена" Margin="20 10"/>
         <TextBlock Grid.Row="7" Grid.Column="3" Text="Пароль: "/>
-        <TextBlock Grid.Row="8" Grid.Column="3" Text="Повор пароль: "/>
-        <TextBox x:Name="Password" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="RePassword" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="8" Grid.Column="3" Text="Повтор пароля: "/>
+        <PasswordBox x:Name="Password" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <PasswordBox x:Name="RePassword" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2"/>
         <CheckBox Grid.Row="9" Grid.Column="4" Grid.ColumnSpan="2" Content="Видимый пароль" FontSize="12" Foreground="#FF5D5555" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 10 40 10"/>
 
 

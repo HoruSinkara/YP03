@@ -34,6 +34,7 @@ namespace YP03
             username = Settings.Default.usernameId;
             password = Settings.Default.password;
             role = Settings.Default.role;
+            
             switch (role)
             {
                 case "Участник":
@@ -42,9 +43,18 @@ namespace YP03
                     this.Close();
                     break;
                 case "Организатор":
-                    OrganizerWindows account1 = new OrganizerWindows();
-                    account1.Show();
-                    this.Close();
+                    var org = Constants.Context.organizers.Where(p => p.Id.Equals(username) && p.Password == password).FirstOrDefault();
+                    if (org!=null)
+                    {
+                        OrganizerWindows account1 = new OrganizerWindows(org);
+                        account1.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Возникла проблема с сохраненной учётной записью");
+                    }
+                    
                     break;
                 case "Жюри":
                     AccountJury account2 = new AccountJury();
@@ -142,7 +152,7 @@ namespace YP03
                                     Settings.Default.usernameId = organizer.Id;
                                     Settings.Default.password = organizer.Password;
                                     Settings.Default.role = "Организатор";
-                                    OrganizerWindows account = new OrganizerWindows();
+                                    OrganizerWindows account = new OrganizerWindows(organizer);
                                     account.Show();
                                     this.Close();
                                 }
